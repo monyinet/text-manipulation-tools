@@ -1,0 +1,21 @@
+body {
+  display: flex;
+  flex-flow: row nowrap;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  align-self: auto;
+  flex-basis: auto;
+
+}
+
+.text-area {
+  height: 16rem !important;
+}
+
+footer {
+  text-align: center;
+}
