@@ -31,7 +31,7 @@ footer {
 @media screen {
   @font-face {
   font-family: 'CC-ICONS';
-  src: url('http://mirrors.creativecommons.org/presskit/cc-icons.ttf') format('truetype');
+  src: url('https://mirrors.creativecommons.org/presskit/cc-icons.ttf') format('truetype');
   }
 
   span.cc {
