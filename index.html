@@ -13,37 +13,67 @@
 </head>
 
 <body>
-    <header class="mb-5">
-        <nav class="nav nav-pills flex-column flex-sm-row mb-5">
-            <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page" href="/">Conversor de textos</a>
-            <a class="flex-sm-fill text-sm-center nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Generador de nombres</a>
-            <a class="flex-sm-fill text-sm-center nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Paletas de colores</a>
-            <a class="flex-sm-fill text-sm-center nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Info</a>
-        </nav>        
-        <h1>Convierte Textos de MAYÚSCULAS a minúsculas Online ✍</h1>
+    <header class="mb-3 px-0">
+        <nav class="navbar navbar-expand-sm navbar-light container mb-3">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="https://monyi.dev/">&lt;monyi.dev/&gt;</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarToggler">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Conversor</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Contacto</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Info</a>
+                  </li>
+                </ul>
+                <span class="navbar-text">
+                    <a href="https://ko-fi.com/monyi" target="_blank" rel="noopener noreferrer">
+                        ¿Me invitas a café?
+                    </a>
+                </span>
+              </div>
+            </div>
+          </nav>
+
+        <h1 class="text-center fs-3 px-1">Convierte Textos de MAYÚSCULAS a minúsculas Online ✍</h1>
     </header>
     
-<main>
-    <section>
-        <div class="form-floating mb-5">
+<main class="mb-3 px-3">
+    <section class="">
+        <div class="form-floating mb-3">
             <textarea class="form-control text-area" id="textArea" name="textArea" placeholder="Escribe el texto:"></textarea>
             <label class="" for="textArea">Escribe aquí el texto...</label>
         </div>
     </section>
 
     <section>
-        <div class="mx-auto">
-            <button type="button" class="btn btn-outline-primary my-2 mx-2" id="toLowerCase" title="Todo minúsculas" value="Todo minúsculas">Todo minúsculas</button>
-            <button type="button" class="btn btn-outline-primary my-2 mx-2" id="toUpperCase" title="Todo mayúsculas" value="Todo mayúsculas">Todo mayúsculas</button>
-            <button type="button" class="btn btn-outline-primary my-2 mx-2" id="toCapitalCase" title="Capitalizar texto" value="Capitalizar texto">Capitalizar texto</button>
-            <button type="button" class="btn btn-outline-danger my-2 mx-2" id="deleteAllText" title="Borrar texto" value="Borrar texto">Borrar texto</button>
-            <button type="button" class="btn btn-outline-success my-2 mx-2" id="copyAllText" title="Copiar texto" value="Copiar texto">Copiar texto</button>
+        <div class="mb-5">
+            <button type="button" class="btn btn-outline-primary my-1 btn-sm" id="toLowerCase" title="todo minúsculas" value="todo minúsculas">todo minúsculas</button>
+            <button type="button" class="btn btn-outline-primary my-1 btn-sm" id="toUpperCase" title="TODO MAYÚSCULAS" value="TODO MAYÚSCULAS">TODO MAYÚSCULAS</button>
+            <button type="button" class="btn btn-outline-primary my-1 btn-sm" id="toCapitalCase" title="Capitalizar Texto" value="Capitalizar Texto">Capitalizar Texto</button>
+            <button type="button" class="btn btn-outline-danger my-1 btn-sm" id="deleteAllText" title="Borrar texto" value="Borrar texto">Borrar texto</button>
+            <button type="button" class="btn btn-outline-success my-1 btn-sm" id="copyAllText" title="Copiar texto" value="Copiar texto">Copiar texto</button>
         </div>
     </section>
 </main>
 
-    <footer class="fixed-bottom bg-warning">
-        <p class="pt-3">&copy; JJ 2022</p>
+    <footer class="fixed-bottom bg-light mt-5">
+        <div class="pt-2">
+            <span class="cc fs-4">Ccb</span> &lt;monyi.dev/&gt; <span id="year"></span>
+                <script>
+                    let newDate = new Date();
+                    let year = newDate.getFullYear();
+                    const setYear = document.getElementById('year');
+                    setYear.innerHTML = year;
+                    // document.write(d.getFullYear());
+                </script>
+        </div>
     </footer>
 
     <script>
