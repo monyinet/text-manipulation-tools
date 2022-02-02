@@ -17,27 +17,19 @@
     <header class="mb-3 px-0">
         <nav class="navbar navbar-expand-sm navbar-light container mb-3">
             <div class="container-fluid">
-              <a class="navbar-brand" href="https://monyi.dev/">&lt;monyi.dev/&gt;</a>
+              <a class="navbar-brand" href="https://monyi.dev/">{monyi.dev}</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarToggler">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="./index.html">Conversor de textos</a>
+                    <a class="nav-link active" aria-current="page" href="./">Conversor de textos</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Contacto</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Info</a>
-                  </li>
-                </ul>
-                <span class="navbar-text">
-                    <a href="https://ko-fi.com/monyi" target="_blank" rel="noopener noreferrer">
-                        ¿Me invitas a café?
-                    </a>
-                </span>
+                    <a class="nav-link" href="https://monyi.dev/contacto/">Contacto</a>
+                  </li>                  
+                </ul>                
               </div>
             </div>
           </nav>
@@ -64,17 +56,27 @@
     </section>
 </main>
 
-    <footer class="fixed-bottom bg-light mt-5">
-        <div class="pt-2">
-            <span class="cc fs-4">Ccb</span> &lt;monyi.dev/&gt; <span id="year"></span>                
-        </div>
-    </footer>
-    
-    <script type="module">
-        import { manipulateText, getActualDate } from './js/functions.js';
-        manipulateText();
-        getActualDate();
-    </script>
+  <footer class="fixed-bottom bg-light mt-5">
+      <div class="pt-2">
+          <span class="cc fs-4">Ccb</span> &lt;monyi.dev/&gt; <span id="year"></span>
+      </div>
+  </footer>
+  
+  <script type="module">
+      import { manipulateText, getActualDate } from './js/functions.js';
+      manipulateText();
+      getActualDate();
+  </script>
+
+  <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+  <script>
+    kofiWidgetOverlay.draw('monyi', {
+      'type': 'floating-chat',
+      'floating-chat.donateButton.text': '',
+      'floating-chat.donateButton.background-color': '#ffffff',
+      'floating-chat.donateButton.text-color': '#323842'
+    });
+  </script>
 
 </body>
 </html>
