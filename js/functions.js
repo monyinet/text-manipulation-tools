@@ -28,7 +28,11 @@ const manipulateText = () => {
 
   copyAllText.addEventListener('click', () => {
     textArea.select();
-    document.execCommand('copy');
+    if (!navigator.clipboard) {
+      document.execCommand('copy');
+    } else {
+      navigator.clipboard.writeText(textArea.value.trim());
+    }
   });
 };
 
