@@ -43,4 +43,14 @@ const getActualDate = () => {
   setYear.innerHTML = year;
 }
 
+//* Menu listeners
+document.querySelector("a.ham-icon").addEventListener("click", (event) => {
+  document.getElementById("sideNavigation").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+});
+document.querySelector("a.close-btn").addEventListener("click", (event) => {
+  document.getElementById("sideNavigation").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+});
+
 export { manipulateText, getActualDate };
