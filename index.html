@@ -47,12 +47,13 @@
 
           <fieldset>
             <legend> <b>Transforma tus textos al instante</b> </legend>
-            <div class="column">
-              <textarea
-                class="textarea is-info is-large"
-                id="textArea"
-                name="textArea"
-                placeholder="En el mundo de las letras, un baile singular,
+            <div class="columns">
+              <div class="column">
+                <textarea
+                  class="textarea is-info is-large"
+                  id="textArea"
+                  name="textArea"
+                  placeholder="En el mundo de las letras, un baile singular,
 donde mayúsculas y minúsculas se entrelazan sin parar.
 Texto tras texto, danzando sin cesar,
 creando historias, mensajes, que nos hacen soñar.
@@ -61,56 +62,96 @@ De un clic, todo cambia, en un abrir y cerrar,
 minúsculas valientes, mayúsculas a destacar.
 Nuestra herramienta trabaja, las letras a transformar,
 dando vida a tus textos, con estilo singular."
-                autofocus
-              ></textarea>
+                  autofocus
+                ></textarea>
+              </div>
             </div>
-
-            <div class="column">
-              <button
-                type="button"
-                class="button is-responsive is-outlined is-info is-large"
-                id="toLowerCase"
-                title="todo minúsculas"
-                value="todo minúsculas"
-              >
-                todo minúsculas
-              </button>
-              <button
-                type="button"
-                class="button is-responsive is-outlined is-info is-large"
-                id="toUpperCase"
-                title="TODO MAYÚSCULAS"
-                value="TODO MAYÚSCULAS"
-              >
-                TODO MAYÚSCULAS
-              </button>
-              <button
-                type="button"
-                class="button is-responsive is-outlined is-info is-large"
-                id="toCapitalCase"
-                title="Capitalizar Texto"
-                value="Capitalizar Texto"
-              >
-                Capitalizar Texto
-              </button>
-              <button
-                type="button"
-                class="button is-responsive is-outlined is-danger is-large"
-                id="deleteAllText"
-                title="Borrar texto"
-                value="Borrar texto"
-              >
-                Borrar texto
-              </button>
-              <button
-                type="button"
-                class="button is-responsive is-outlined is-success is-large"
-                id="copyAllText"
-                title="Copiar texto"
-                value="Copiar texto"
-              >
-                Copiar texto
-              </button>
+            <div class="columns">
+              <div class="column">
+                <button
+                  type="button"
+                  class="button is-responsive is-outlined is-info is-large"
+                  id="toLowerCase"
+                  title="todo minúsculas"
+                  value="todo minúsculas"
+                >
+                  todo minúsculas
+                </button>
+                <button
+                  type="button"
+                  class="button is-responsive is-outlined is-info is-large"
+                  id="toUpperCase"
+                  title="TODO MAYÚSCULAS"
+                  value="TODO MAYÚSCULAS"
+                >
+                  TODO MAYÚSCULAS
+                </button>
+                <button
+                  type="button"
+                  class="button is-responsive is-outlined is-info is-large"
+                  id="toCapitalCase"
+                  title="Capitalizar Texto"
+                  value="Capitalizar Texto"
+                >
+                  Capitalizar Texto
+                </button>
+                <button
+                  type="button"
+                  class="button is-responsive is-outlined is-info is-large"
+                  id="toKebabCase"
+                  title="kebab-case"
+                  value="kebab-case"
+                >
+                  kebab-case
+                </button>
+                <button
+                  type="button"
+                  class="button is-responsive is-outlined is-info is-large"
+                  id="toCamelCase"
+                  title="camelCase"
+                  value="camelCase"
+                >
+                  camelCase
+                </button>
+                <button
+                  type="button"
+                  class="button is-responsive is-outlined is-info is-large"
+                  id="toSnakeCase"
+                  title="snake_case"
+                  value="snake_case"
+                >
+                  snake_case
+                </button>
+                <button
+                  type="button"
+                  class="button is-responsive is-outlined is-info is-large"
+                  id="toNormalCase"
+                  title="Limpiar Texto"
+                  value="Limpiar Texto"
+                >
+                  Limpiar Texto
+                </button>
+              </div>              
+              <div class="column">
+                <button
+                  type="button"
+                  class="button is-responsive is-outlined is-danger is-large"
+                  id="deleteAllText"
+                  title="Borrar texto"
+                  value="Borrar texto"
+                >
+                  Borrar texto
+                </button>
+                <button
+                  type="button"
+                  class="button is-responsive is-outlined is-success is-large"
+                  id="copyAllText"
+                  title="Copiar texto"
+                  value="Copiar texto"
+                >
+                  Copiar texto
+                </button>
+              </div>
             </div>
           </fieldset>
         </section>
