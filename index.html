@@ -21,6 +21,12 @@
   </head>
 
   <body>
+    <!-- Add a floating button to toggle dark mode -->
+    <div class="dark-mode-btn">
+      <input type="checkbox" id="dark-mode" />
+      <label for="dark-mode"></label>
+      <!-- <div class="background"></div> -->
+    </div>
     <main>
       <div class="container">
         <div id="sideNavigation" class="sidenav">
@@ -131,7 +137,7 @@ dando vida a tus textos, con estilo singular."
                 >
                   Limpiar Texto
                 </button>
-              </div>              
+              </div>
               <div class="column">
                 <button
                   type="button"
@@ -160,6 +166,7 @@ dando vida a tus textos, con estilo singular."
     <footer class="footer">
       <p class="is-info">{monyi.dev} <span id="year"></span></p>
     </footer>
+
     <script type="module">
       import { manipulateText, getActualDate } from "./js/functions.js";
       manipulateText();

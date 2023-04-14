@@ -9,6 +9,7 @@ const manipulateText = () => {
   const toNormalCase = document.getElementById('toNormalCase');
   const deleteAllText = document.getElementById('deleteAllText');
   const copyAllText = document.getElementById('copyAllText');
+  const darkMode = document.getElementById('dark-mode');
 
   textArea.addEventListener('keyup', () => {
     textArea.value = textArea.value;
@@ -26,8 +27,8 @@ const manipulateText = () => {
     textArea.value = textArea.value.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
   });
 
-  toKebabCase.addEventListener('click', () => {    
-    textArea.value = convertToKebabCase(textArea.value);     
+  toKebabCase.addEventListener('click', () => {
+    textArea.value = convertToKebabCase(textArea.value);
   });
 
   toCamelCase.addEventListener('click', () => {
@@ -54,6 +55,10 @@ const manipulateText = () => {
       navigator.clipboard.writeText(textArea.value.trim());
     }
   });
+
+  darkMode.addEventListener('click', () => {
+    darkMode.checked ? document.body.classList.remove('dark-theme') : document.body.classList.add('dark-theme');
+  });
 };
 
 const getActualDate = () => {
@@ -75,29 +80,40 @@ document.querySelector("a.close-btn").addEventListener("click", (event) => {
 
 //* Dark mode
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-if (prefersDarkScheme.matches) {
-  document.body.classList.add("dark-theme");
-} else {
-  document.body.classList.remove("dark-theme");
+// toggleDarkTheme(prefersDarkScheme.matches);
+toggleDarkTheme(prefersDarkScheme.matches);
+
+
+function toggleDarkTheme(bool) {
+  const darkMode = document.getElementById('dark-mode');
+  if (bool) {
+    document.body.classList.add("dark-theme");
+    darkMode.checked = false;
+  } else {
+    document.body.classList.remove("dark-theme");
+    darkMode.checked = true;
+  }
+
+  // if (!darkMode.checked) {
+  //   document.body.classList.add('dark-theme');
+  // } else {
+  //   document.body.classList.remove('dark-theme');
+  // }
 }
 
 function convertToKebabCase(str) {
-  //* Modify this regex to replace all spaces and non alpha characters with dashes and lowercase the string
   return str.replace(/[^a-zA-Z0-9]+(.)/g, (_, c) => c ? '-' + c.toLowerCase() : '').toLowerCase();
 }
 
 function convertToCamelCase(str) {
-  //* The first letter should be lowercase. Then remove all non alpha characters and capitalize the first letter of each word without spaces.  
   return str.replace(/[^a-zA-Z]+(.)/g, (_, c) => c ? c.toUpperCase() : '');
 }
 
 function convertToSnakeCase(str) {
-  //* Modify this regex to replace all spaces and non alpha characters with underscores and lowercase the string
   return str.replace(/[^a-zA-Z0-9]+(.)/g, (_, c) => c ? '_' + c.toLowerCase() : '').toLowerCase();
 }
 
 function convertToNormalCase(str) {
-  //* Modify this regex to replace all dashes and underscores with spaces and capitalize the first letter of each word
   return str.replace(/[-_]+(.)/g, (_, c) => c ? ' ' + c.toUpperCase() : '').toLowerCase();
 }
 
