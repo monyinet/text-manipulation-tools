@@ -61,4 +61,31 @@ if (prefersDarkScheme.matches) {
   document.body.classList.remove("dark-theme");
 }
 
-export { manipulateText, getActualDate };
+function toKebabCase(str) {
+  //* Modify this regex to replace all spaces and non alpha characters with dashes and lowercase the string
+  return str.replace(/[^a-zA-Z0-9]+(.)/g, (_, c) => c ? '-' + c.toLowerCase() : '').toLowerCase();
+}
+
+function toCamelCase(str) {
+  //* The first letter should be lowercase. Then remove all non alpha characters and capitalize the first letter of each word without spaces.  
+  return str.replace(/[^a-zA-Z]+(.)/g, (_, c) => c ? c.toUpperCase() : '');
+}
+
+function toSnakeCase(str) {
+  //* Modify this regex to replace all spaces and non alpha characters with underscores and lowercase the string
+  return str.replace(/[^a-zA-Z0-9]+(.)/g, (_, c) => c ? '_' + c.toLowerCase() : '').toLowerCase();
+}
+
+function toNormalCase(str) {
+  //* Modify this regex to replace all dashes and underscores with spaces and capitalize the first letter of each word
+  return str.replace(/[-_]+(.)/g, (_, c) => c ? ' ' + c.toUpperCase() : '').toLowerCase();
+}
+
+export {
+  manipulateText,
+  getActualDate,
+  toKebabCase,
+  toCamelCase,
+  toSnakeCase,
+  toNormalCase
+};
