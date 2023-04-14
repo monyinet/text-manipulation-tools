@@ -1,11 +1,18 @@
 html,
 body {
+  display: flex;
+  flex-direction: column;
   @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap");
   font-family: "Roboto Condensed", sans-serif;
   font-size: 16px;
   line-height: 1.6;
   overflow-x: hidden;
-  overflow-y: hidden; 
+  overflow-y: hidden;
+  min-height: 100vh;
+}
+
+main {
+  height: 90vh;
 }
 
 input {
@@ -32,9 +39,12 @@ button {
 a {
   text-decoration: none;
 }
+h1 {
+  text-align: center;
+}
 
 textarea {
-  height: 60vh !important;
+  height: 50vh !important;
 }
 
 fieldset {
@@ -46,6 +56,8 @@ fieldset {
 
 footer {
   text-align: center;
+  max-height: 50px !important;
+  margin-top: auto;
 }
 
 .ham-icon {
@@ -97,6 +109,43 @@ footer {
   transform: scale(1.2);
 }
 
+/* Dark Mode */
+
+body.dark-theme {
+  background: #121212;
+  color: #eee;
+}
+/* body.dark-theme button{
+  background: #fff !important;
+}
+body.dark-theme button:hover{
+  color: auto !important;
+  background: red !important;
+} */
+body.dark-theme textarea{
+  background: #121212;
+  color: #eee;
+}
+body.dark-theme textarea::placeholder {
+  color: #eee;
+  opacity: 0.4;
+}
+
+body.dark-theme footer{
+  background: #060606;
+}
+body.dark-theme h1,
+body.dark-theme p {
+  color: #eee;
+}
+body.dark-theme a {
+  color: #eee;
+}
+
+body.dark-theme path {
+  stroke: #eee;
+}
+
 #main {
   /* display: flex;
   flex-direction: row;
@@ -114,9 +163,44 @@ a svg:hover {
   transform: rotate(180deg);
 }
 
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: scroll;
+    overflow-y: scroll;
+  }
+
+  #main {
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center; */
+    /* transition: margin-left 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28); */
+    transition: none;
+    /* padding: 20px; */
+    /* width: 100vw; */
+  }
+  .sidenav {
+    /* height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 4rem; */
+    /* transition: 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28); */
+    transition: none;
+    /* font-family: "Bebas Neue"; */
+    /* font-family: "Roboto Condensed", sans-serif; */
+  }
+}
+
 @media screen and (max-height: 480px) {
   .sidenav {
     padding-top: 3rem;
+    transition: none;
   }
   .sidenav a {
     font-size: 1.5rem;
