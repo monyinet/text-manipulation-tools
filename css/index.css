@@ -27,6 +27,7 @@ textarea {
   font-family: "Roboto Condensed", sans-serif;
   font-size: 16px !important;
   line-height: 1.6;
+  resize: vertical;
 }
 
 button {
@@ -138,6 +139,9 @@ body.dark-theme h1,
 body.dark-theme p {
   color: #eee;
 }
+body.dark-theme p.modal-card-title {
+  color: #121212;
+}
 body.dark-theme a {
   color: #eee;
 }
@@ -211,8 +215,8 @@ a svg:hover {
 label  {
   position: absolute;
   z-index: 1;
-  bottom: 12px;
-  right: 12px;
+  bottom: -25px;
+  right: -25px;
   width: 100px;
   height: 100px;
   display: block;

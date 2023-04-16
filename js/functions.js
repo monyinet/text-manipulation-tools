@@ -8,8 +8,10 @@ const manipulateText = () => {
   const toSnakeCase = document.getElementById('toSnakeCase');
   const toNormalCase = document.getElementById('toNormalCase');
   const deleteAllText = document.getElementById('deleteAllText');
-  const copyAllText = document.getElementById('copyAllText');
+  const copyAllText = document.getElementById('copy-text');
   const darkMode = document.getElementById('dark-mode');
+  const copyModal = document.getElementById('copy-modal');
+  const closeCopyModal = document.getElementById('close-copy-modal');
 
   textArea.addEventListener('keyup', () => {
     textArea.value = textArea.value;
@@ -48,18 +50,35 @@ const manipulateText = () => {
   });
 
   copyAllText.addEventListener('click', () => {
+    tippy('#copy-text', {
+      delay: 0,
+      content: 'Texto copiado 🎉',
+      trigger: 'click',
+      placement: 'bottom',
+      theme: 'light',
+      arrow: true,
+      animation: 'scale',
+      duration: 500
+    });
     textArea.select();
-    if (!navigator.clipboard) {
-      document.execCommand('copy');
-    } else {
-      navigator.clipboard.writeText(textArea.value.trim());
-    }
+    // if (!navigator.clipboard) {
+    //   document.execCommand('copy');
+    // } else {
+    //   navigator.clipboard.writeText(textArea.value.trim());
+    // }
+    navigator.clipboard.writeText(textArea.value.trim());
   });
 
   darkMode.addEventListener('click', () => {
     darkMode.checked ? document.body.classList.remove('dark-theme') : document.body.classList.add('dark-theme');
   });
+
+  closeCopyModal.addEventListener('click', () => {
+    // copyModal.classList.remove('is-active');
+    // copyModal.classList.remove('is-clipped');
+  });
 };
+
 
 const getActualDate = () => {
   let newDate = new Date();
