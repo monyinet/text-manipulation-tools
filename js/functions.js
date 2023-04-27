@@ -47,6 +47,7 @@ const manipulateText = () => {
 
   deleteAllText.addEventListener('click', () => {
     textArea.value = '';
+    textArea.focus();
   });
 
   copyAllText.addEventListener('click', () => {
